@@ -1,0 +1,103 @@
+
+*{
+   padding: 0%;
+   margin: 0;
+   box-sizing: border-box;
+}
+body{
+    height:100vh ;
+    width:100vw; 
+    background: rgb(255,193,142);
+    background: linear-gradient(90deg, rgba(255,193,142,1) 0%, rgba(202,78,121,1) 50%, rgba(122,64,105,1) 100%);
+
+}
+#nav{
+    width: 100%;
+    height: 15%;
+    background: #513252;
+    display: flex;
+    align-items: center;
+}
+#main{
+    width: 100%;
+    height: 85%;
+    display: flex;
+}
+#lev{
+    width: 20%;
+    height: 100%;
+    background-color:#7A4069;
+    opacity: 0.8;
+}
+#type{
+    height:100%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    flex-direction: column;
+
+}
+#dis{
+    width: 80%;
+    height: 40%;
+    background-color: #7A4069;
+    opacity: 0.8;
+    border-radius: 15px;
+    padding: 18px;
+    font-family: serif;
+    font-weight: 100;
+    font-size: 30px;
+    color: rgb(150, 150, 150);
+    overflow: scroll;
+}
+#dis::-webkit-scrollbar {
+    display: none;
+  }
+  
+#wri{
+    width: 80%;
+    height: 16%;
+    background-color: #FFC18E;
+    border-radius: 15px;
+    opacity: 0.2;
+}
+#logo{
+    height: 30%;
+    margin: 20px;
+}
+input{
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+    border-radius: 15px;
+    padding: 18px;
+}
+#timer{
+    background-color: #ffc18e7d;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+#time{
+    font-size: 40px;
+    font-family: cursive;
+    font-weight: 600;
+    color:rgb(255, 255, 255);
+}
+#wpm{
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px
+}
+#marks{
+    font-size: 40px;
+    font-family: cursive;
+    font-weight: 600;
+    color:rgb(255, 255, 255);
+}
