@@ -26,5 +26,5 @@ function func(){
 }
 text.addEventListener("focus",textAlter)
 function textAlter(){
-    inter =setInterval(func,200)
+    inter =setInterval(func,1000)
 }
