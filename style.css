@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@400;500&family=Tilt+Prism&display=swap');
 *{
    padding: 0%;
    margin: 0;
@@ -9,7 +9,7 @@ body{
     width:100vw; 
     background: rgb(255,193,142);
     background: linear-gradient(90deg, rgba(255,193,142,1) 0%, rgba(202,78,121,1) 50%, rgba(122,64,105,1) 100%);
-
+    font-family: 'Encode Sans Condensed', sans-serif;
 }
 #nav{
     width: 100%;
@@ -46,7 +46,6 @@ body{
     opacity: 0.8;
     border-radius: 15px;
     padding: 18px;
-    font-family: serif;
     font-weight: 100;
     font-size: 30px;
     color: rgb(150, 150, 150);
@@ -84,20 +83,29 @@ input{
 }
 #time{
     font-size: 40px;
-    font-family: cursive;
+    font-family: 'Tilt Prism', cursive;
     font-weight: 600;
     color:rgb(255, 255, 255);
-}
-#wpm{
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px
 }
 #marks{
     font-size: 40px;
     font-family: cursive;
     font-weight: 600;
     color:rgb(255, 255, 255);
+}
+.highlight{
+    background-color: #513252;
+    border-radius: 2px;
+    padding: 2px;
+}
+#result{
+    height: 300px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#accuracy,#wrong,#correct{
+    font-size: 20px;
 }
