@@ -6,25 +6,27 @@ const correct =document.querySelector("#correct")
 const wrong = document.querySelector("#wrong")
 const accuracy = document.querySelector("#accuracy")
 const result = document.querySelector("#result")
-var refPara = "Typing offers numerous benefits in today's digital age. One of the most significant advantages is its speed and efficiency. Compared to handwriting, typing allows for much faster input of text, enabling individuals to complete tasks and communicate more quickly. This increased speed directly translates to heightened productivity, saving valuable time in various personal and professional activities. Another key benefit of typing is its impact on communication. With the prevalence of digital communication channels such as emails, instant messaging, and social media, typing has become an essential skill for effective and efficient communication. People can exchange information swiftly, connect with others globally, and collaborate seamlessly, transcending geographical boundaries."
-const ref = refPara.split(" ");
+const refresh = document.querySelector("#refresh")
 var start = false;
 var wpm=0;
 var error=0;
 var inter;
 var sec=59;
+var ref;
 var paraSum=""
 text.focus();
 let i=0; 
 
-
-for(let i=0;i<ref.length;i++){
-    paraSum = paraSum+`<span id="${i}">${ref[i]}</span> `
+async function getPara(){
+    var data = await fetch("http://metaphorpsum.com/paragraphs/1/30");
+    var refPara = await data.text();
+    ref = refPara.split(" ");
+    for(let i=0;i<ref.length;i++){
+        paraSum = paraSum+`<span id="${i}">${ref[i]}</span> `
+    }
+    dis.innerHTML=paraSum
 }
-
-dis.innerHTML=paraSum
-
-document.getElementById(i).classList.add("highlight");
+getPara()
 
 function func(){
     if(sec==60){
@@ -36,7 +38,7 @@ function func(){
         wrong.innerHTML = "Wrong words : "+error
         let total = wpm+error
         accuracy.innerHTML = (total==0)?"Accuracy : ---":"Accuracy : "+ Math.round(wpm/total*100)+"%"
-        result.style.backgroundColor="#ffc18e"
+        result.style.backgroundColor="#A27B5C"
         clearInterval(inter)
     }
     else{
@@ -60,6 +62,7 @@ function textAlter(){
 
 text.addEventListener('keydown', testing);
 function testing(e) {
+    document.getElementById(i).classList.add("highlight");
     if (e.key === ' ') {
         let myWord = text.value.trim();
         if(ref[i]===myWord){
@@ -76,3 +79,7 @@ function testing(e) {
         text.value=""
     }
   }
+
+  refresh.addEventListener("click",()=>{
+    location.reload();
+  })
